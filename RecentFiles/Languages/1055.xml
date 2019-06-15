@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Lang>
+  <mAbout>Hakkında</mAbout>
+  <ttSecondLine>Gelişmiş liste</ttSecondLine>
+  <mOpenFile>Aç</mOpenFile>
+  <mOpenContainingFolder>İçeren klasörü aç</mOpenContainingFolder>
+  <mCloseFile>Kapat</mCloseFile>
+  <mDeleteFilefromDisk>Diskten sil</mDeleteFilefromDisk>
+  <mDeletefromList>Listeden sil</mDeletefromList>
+</Lang>

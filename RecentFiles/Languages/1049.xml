@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Lang>
+  <mAbout>О программе...</mAbout>
+  <ttSecondLine>Расширенный список последних документов</ttSecondLine>
+  <mOpenFile>Открыть файл</mOpenFile>
+  <mOpenContainingFolder>Открыть папку файла</mOpenContainingFolder>
+  <mCloseFile>Закрыть файл</mCloseFile>
+  <mDeleteFilefromDisk>Удалить файл с диска</mDeleteFilefromDisk>
+  <mDeletefromList>Удалить из списка</mDeletefromList>
+</Lang>

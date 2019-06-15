@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<App>
+  <Options />
+  <Languages>
+    <lang Name="Русский" Id="1049" />
+    <lang Name="Türkçe" Id="1055" />
+    <lang Name="中文" Id="2052" />
+  </Languages>
+</App>

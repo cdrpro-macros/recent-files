@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Lang>
+  <mAbout>关于 RecentFiles...</mAbout>
+  <ttSecondLine>高级列表</ttSecondLine>
+  <mOpenFile>打开文件</mOpenFile>
+  <mOpenContainingFolder>打开文件所在的文件夹</mOpenContainingFolder>
+  <mCloseFile>关闭文件</mCloseFile>
+  <mDeleteFilefromDisk>从磁盘删除文件</mDeleteFilefromDisk>
+  <mDeletefromList>从列表删除</mDeletefromList>
+</Lang>

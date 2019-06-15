@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Lang>
+  <mAbout>About RecentFiles...</mAbout>
+  <ttSecondLine>Advanced list of recent documents</ttSecondLine>
+  <mOpenFile>Open File</mOpenFile>
+  <mOpenContainingFolder>Open Containing Folder</mOpenContainingFolder>
+  <mCloseFile>Close File</mCloseFile>
+  <mDeleteFilefromDisk>Delete File from Disk</mDeleteFilefromDisk>
+  <mDeletefromList>Delete from List</mDeletefromList>
+</Lang>

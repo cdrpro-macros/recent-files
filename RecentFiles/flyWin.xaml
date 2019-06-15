@@ -1,0 +1,84 @@
+﻿<Window x:Class="RecentFiles.FlyWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="flyWin"
+        mc:Ignorable="d"
+        d:DesignWidth="240"
+        d:DesignHeight="589"
+        SizeToContent="WidthAndHeight"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        Background="WhiteSmoke"
+        Deactivated="Window_Deactivated"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <XmlDataProvider x:Key="Lang" XPath="Lang" />
+    </Window.Resources>
+    <Grid Name="mainGrid">
+        <Grid.Resources>
+            <Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            </Style>
+            <DataTemplate x:Key="CdrItemTemplate">
+                <WrapPanel Background="Transparent">
+                    <WrapPanel.ContextMenu>
+                        <ContextMenu Background="WhiteSmoke">
+                            <MenuItem Header="{Binding Source={StaticResource Lang}, XPath=mOpenFile}" Click="mOpenFile">
+                                <MenuItem.Icon>
+                                    <Image Source="/RecentFiles;component/Images/open-document.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{Binding Source={StaticResource Lang}, XPath=mOpenContainingFolder}" Click="mReveal">
+                                <MenuItem.Icon>
+                                    <Image Source="/RecentFiles;component/Images/file-explorer.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{Binding Source={StaticResource Lang}, XPath=mCloseFile}" IsEnabled="{Binding isOpen}" Click="mCloseFile" />
+                            <Separator/>
+                            <MenuItem Header="{Binding Source={StaticResource Lang}, XPath=mDeleteFilefromDisk}" Click="mDelete">
+                                <MenuItem.Icon>
+                                    <Image Source="/RecentFiles;component/Images/delete.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{Binding Source={StaticResource Lang}, XPath=mDeletefromList}" Click="mDeleteItem">
+                                <MenuItem.Icon>
+                                    <Image Source="/RecentFiles;component/Images/item_delete.png" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </ContextMenu>
+                    </WrapPanel.ContextMenu>
+                    <Grid ToolTip="{Binding Path=cdr_filepath}" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="66" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" BorderBrush="DarkGray" BorderThickness="1" Width="60" Height="60" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <Image Source="{Binding cdr_icon}" Width="60" Height="60" Margin="0,0,0,0" />
+                        </Border>
+                        <Grid Grid.Column="1" Width="144" HorizontalAlignment="Left">
+                            <TextBlock Text="{Binding Path=cdr_file_name}" ToolTip="{Binding Path=cdr_file_name}" TextWrapping="NoWrap"
+                                	VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,2,0,0" Foreground="{Binding bg_color}" FontSize="12" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Path=cdr_info}" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray" FontSize="10" Margin="0,20,0,0" />
+                        </Grid>
+                    </Grid>
+                </WrapPanel>
+            </DataTemplate>
+            <Style x:Key="CdrItemStyle" TargetType="{x:Type ListBoxItem}">
+                <Setter Property="Margin" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <!--<Setter Property="Focusable" Value="false"/>-->
+            </Style>
+        </Grid.Resources>
+        <Border BorderThickness="1" BorderBrush="DarkGray" Background="WhiteSmoke" />
+        <TextBlock Name="wTitle" Height="20" VerticalAlignment="Top" Foreground="Gray" FontSize="11" TextAlignment="Center" Margin="10,4,10,0" />
+        <ListBox Name="lst" Margin="10,26,10,38" Style="{DynamicResource ListBoxStyle}" ItemsSource="{Binding}" MouseLeftButtonUp="lst_MouseLeftButtonUp"
+                 ItemTemplate="{StaticResource CdrItemTemplate}" ItemContainerStyle="{StaticResource CdrItemStyle}" />
+        <Border Height="24" VerticalAlignment="Bottom" Background="Transparent" BorderThickness="1" BorderBrush="DarkGray" Margin="10,0,10,10" />
+        <Image Height="16" Width="16" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="14,0,0,14" Source="/RecentFiles;component/Images/search.png" />
+        <TextBox Height="24" Margin="34,0,10,10" Padding="0,2,0,0" Name="tbFind" VerticalAlignment="Bottom" TextChanged="tbFind_TextChanged" />
+    </Grid>
+</Window>
