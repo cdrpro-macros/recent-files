@@ -2,7 +2,7 @@
 
 # ATTRIBUTES
 Name '${MyName}'
-OutFile '${MyName} Installer X7-2019.exe'
+OutFile '${MyName} Installer X7-2022.exe'
 BrandingText 'http://cdrpro.ru/'
 SetCompressor /SOLID lzma
 XPStyle on
@@ -124,7 +124,7 @@ Section /o '' sec21x64
   ${ENDIF}
 SectionEnd
   
-  Section /o '' sec22
+Section /o '' sec22
   ${IF} $cdr22 != ''
     !insertmacro execSection 22 2020 ''
   ${ENDIF}
